@@ -1,12 +1,84 @@
-import 'dart:core';
+import 'package:flutter/material.dart';
 
-main() {
-var arr = ['TransUnion 1Check' , 'OrderIN','EcoSlips','InterGreatMe','Zulzi', 'Hey Jude', 'Oru Social', 'TouchSA', 'Pick n Pay Super Animals 2', 'The TreeApp South Africa', 'WatIf Health Portal', 'Awethu Project', 'Shyft for Standard Bank', 'Pineapple','Cowa Bunga','Digemy Knowledge Partner and Besmarter','Bestee' , 'The African Cyber Gaming League App (ACGL)', 'dbTrack','Bestee','Stokfella','Difela Hymns', 'Xander English 1-20', 'Ctrl' , 'Khula', 'ASI Snakes'];
-
-
-print(arr);
-  
-
-  
-  
+void main()
+ {
+  runApp( MaterialApp(
+       home: Home()
+  ));
 }
+
+class Home extends  StatefulWidget 
+{
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> 
+{
+
+  @override
+  Widget build(BuildContext context) 
+{
+
+
+List<String>AppOfTheWinnersOf2017&2018=[
+'TransUnion 1Check' ,
+'OrderIN','EcoSlips',
+'InterGreatMe',
+'Zulzi',
+'Hey Jude',
+'Oru Social',
+'TouchSA', 
+'Pick n Pay Super Animals 2', 
+'The TreeApp South Africa', 
+'WatIf Health Portal', 
+'Awethu Project', 
+'Shyft for Standard Bank', 
+'Pineapple',
+'Cowa Bunga',
+'Digemy Knowledge Partner and Besmarter',
+'Bestee' , 
+'The African Cyber Gaming League App (ACGL)',
+'dbTrack',
+'Bestee',
+'Stokfella',
+'Difela Hymns', 
+'Xander English 1-20',
+'Ctrl' , 
+'Khula', 
+'ASI Snakes'];
+
+AppOfTheWinnersOf2017&2018.sort((a, b){ //sorting in ascending order
+    return a.compareTo(b);
+});
+
+
+return Scaffold(
+         appBar: AppBar(
+            title: Text("Sorting List Alphabetically"),
+            backgroundColor: Colors.redAccent,
+         ),
+          body: Container(
+             alignment: Alignment.center,
+             padding: EdgeInsets.all(20),
+             child: Column(
+               children:countries.map((cone){
+                  return Container(
+                    child: Card(
+                       child:Container( 
+                         width: double.infinity,
+                         padding: EdgeInsets.all(15),
+                         child: Text(cone, style: TextStyle(fontSize: 18))),
+                       ),
+                  );
+               }).toList(),
+             ),
+          )
+      );
+  }
+}
+ 
+
+  
+  
+
